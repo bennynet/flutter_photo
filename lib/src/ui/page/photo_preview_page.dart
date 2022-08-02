@@ -376,8 +376,8 @@ class _BigPhotoImageState extends State<BigPhotoImage>
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return FutureBuilder(
-      future:
-          widget.assetEntity.thumbDataWithSize(width.floor(), height.floor()),
+      future: widget.assetEntity
+          .thumbnailDataWithSize(ThumbnailSize(width.floor(), height.floor())),
       builder: (BuildContext context, AsyncSnapshot<Uint8List> snapshot) {
         var file = snapshot.data;
         if (snapshot.connectionState == ConnectionState.done && file != null) {

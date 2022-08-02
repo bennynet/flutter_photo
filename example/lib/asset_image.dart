@@ -40,11 +40,9 @@ class AssetImageWidget extends StatelessWidget {
         } else {
           return _buildContainer();
         }
-      },
-      future: assetEntity.thumbDataWithSize(
-        width.toInt(),
-        height.toInt(),
-      ),
+      }, //
+      future: assetEntity
+          .thumbnailDataWithSize(ThumbnailSize(width.toInt(), height.toInt())),
     );
   }
 

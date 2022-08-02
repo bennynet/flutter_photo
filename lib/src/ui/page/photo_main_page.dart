@@ -243,13 +243,13 @@ class _PhotoMainPageState extends State<PhotoMainPage>
       assetProvider.current = pathList[0];
       await assetProvider.loadMore();
     }
-
+    /*
     for (var path in pathList) {
       if (path.isAll) {
-        path.name = i18nProvider.getAllGalleryText(options);
+        //path.name = i18nProvider.getAllGalleryText(options);
       }
     }
-
+*/
     setState(() {
       _isInit = true;
     });
