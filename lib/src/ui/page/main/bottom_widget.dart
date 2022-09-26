@@ -47,9 +47,8 @@ class __BottomWidgetState extends State<_BottomWidget> {
           height: 52.0,
           child: Row(
             children: <Widget>[
-              FlatButton(
+              TextButton(
                 onPressed: _showGallerySelectDialog,
-                splashColor: Colors.transparent,
                 child: Container(
                   alignment: Alignment.center,
                   height: 44.0,
@@ -63,11 +62,11 @@ class __BottomWidgetState extends State<_BottomWidget> {
               Expanded(
                 child: Container(),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: widget.onTapPreview,
-                textColor: options.textColor,
-                splashColor: Colors.transparent,
-                disabledTextColor: options.disableColor,
+                style: TextButton.styleFrom(
+                    foregroundColor: options.textColor,
+                    disabledForegroundColor: options.disableColor),
                 child: Container(
                   height: 44.0,
                   alignment: Alignment.center,
@@ -90,10 +89,10 @@ class __BottomWidgetState extends State<_BottomWidget> {
     var result = await showModalBottomSheet(
       context: context,
       builder: (ctx) => ChangeGalleryDialog(
-            galleryList: widget.galleryListProvider.galleryPathList,
-            i18n: i18nProvider,
-            options: options,
-          ),
+        galleryList: widget.galleryListProvider.galleryPathList,
+        i18n: i18nProvider,
+        options: options,
+      ),
     );
 
     if (result != null) widget.onGalleryChange?.call(result);

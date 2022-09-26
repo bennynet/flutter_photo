@@ -135,8 +135,7 @@ class _PhotoMainPageState extends State<PhotoMainPage>
               ),
             ),
             actions: <Widget>[
-              FlatButton(
-                splashColor: Colors.transparent,
+              TextButton(
                 child: Text(
                   i18nProvider.getSureText(options, selectedCount),
                   style: selectedCount == 0
@@ -183,7 +182,7 @@ class _PhotoMainPageState extends State<PhotoMainPage>
     if (isPushed) {
       return;
     }
-    Scaffold.of(scaffoldKey.currentContext).showSnackBar(
+    ScaffoldMessenger.of(scaffoldKey.currentContext).showSnackBar(
       SnackBar(
         content: Text(
           msg,
